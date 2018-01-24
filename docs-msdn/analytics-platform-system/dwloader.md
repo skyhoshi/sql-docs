@@ -483,7 +483,7 @@ Skip loading empty files. This also skips uncompressing empty gzip files.
   
 In a command window or batch file, use `errorlevel` to display the return code. For example:  
   
-```  
+```bat  
 dwloader  
 echo ReturnCode=%errorlevel%  
 if not %errorlevel%==0 echo Fail  
@@ -597,7 +597,7 @@ For more information, see [Install AdventureWorksPDW2012](install-adventureworks
 
 The following script snippet uses dwloader to load data into the DimAccount and DimCurrency tables. This script is using an Ethernet address. If it was using InfiniBand, server would be *<appliance_name>*`-SQLCTL01`.  
   
-```  
+```bat  
 set server=10.193.63.134  
 set user=<MyUser>  
 set password=<MyPassword>  
@@ -621,7 +621,7 @@ set t1=DimCurrency
   
 The following is the DDL for the DimAccount Table.  
   
-```  
+```sql  
 CREATE TABLE DimAccount(  
 AccountKey int NOT NULL,  
 ParentAccountKey int,  
@@ -660,7 +660,7 @@ The following is an example of the data file, DimAccount.txt, that contains data
 ### C. Load Data from the Command Line  
 The script in Example B can be replaced by entering all the parameters on the command line, as shown in the following example.  
   
-```  
+```
 C:\Program Files\Microsoft SQL Server Parallel Data Warehouse\100\dwloader.exe –S <Control node IP> -E –M reload –e UTF16 -i .\DimAccount.txt –T AdventureWorksPDW2012.dbo.DimAccount –R DimAccount.bad –t "|" –r \r\n –U <login> -P <password>  
 ```  
   

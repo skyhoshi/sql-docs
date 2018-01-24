@@ -34,13 +34,13 @@ You can configure non-appliance servers to belong to your own customer workgroup
   
 For example, this statement adds network credentials for performing backups through InfiniBand to a backup server that has an InfiniBand IP address 192.168.0.1. The appliance domain is *mypdw*, and the statement is performed from the backup server. Before running this statement, you need to fill in your own parameters.  
   
-```  
+```sql  
 sqlcmd -S "mypdw-sqlctl01,17001" -U sa -P password -I -Q "exec sp_pdw_add_network_credentials '192.168.0.1', 'mypdw\Administrator', 'password'"  
 ```  
   
 For example, a loading command will start with the following:  
   
-```  
+```sql  
 dwloader –S mypdw-SQLCTL01  
 ```  
   

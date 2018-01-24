@@ -88,15 +88,15 @@ PDW will access the backup server through a UNC file share. To set up the file s
   
     For example:  
   
-    ```  
-    EXEC sp_pdw_add_network_credentials '10.192.147.63', 'seattle\david', '********';  
-    ```  
+```sql
+EXEC sp_pdw_add_network_credentials '10.192.147.63', 'seattle\david', '********';
+```
   
-    For more information, see these stored procedures:  
-  
-    -   [sp_pdw_add_network_credentials](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-pdw-add-network-credentials-sql-data-warehouse)  
-  
-    -   [sp_pdw_remove_network_credentials](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-pdw-remove-network-credentials-sql-data-warehouse)  
+For more information, see these stored procedures:  
+
+-   [sp_pdw_add_network_credentials](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-pdw-add-network-credentials-sql-data-warehouse)  
+
+-   [sp_pdw_remove_network_credentials](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-pdw-remove-network-credentials-sql-data-warehouse)  
   
 ## <a name="Step5"></a>Step 5: Start backing up your data  
 You are now ready to start backing up data to your backup server.  
@@ -108,11 +108,10 @@ To backup data, use a query client to connect to SQL Server PDW and then submit 
   
 For example:  
   
-```  
+```sql
 BACKUP DATABASE Invoices TO DISK = '\\10.172.14.255\backups\yearly\Invoices2013Full';  
   
-RESTORE DATABASE Invoices2013Full  
-FROM DISK = '\\10.172.14.255\backups\yearly\Invoices2013Full'  
+RESTORE DATABASE Invoices2013Full FROM DISK = '\\10.172.14.255\backups\yearly\Invoices2013Full'  
 ```  
   
 For more information, see: 

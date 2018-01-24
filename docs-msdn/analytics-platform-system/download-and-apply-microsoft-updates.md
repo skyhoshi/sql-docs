@@ -145,13 +145,13 @@ Follow these instructions to run the Analytics Platform System Update program.
   
 **To Run the Microsoft Update:**  
   
-```  
+```PowerShell  
 C:\pdwinst\media\setup.exe /action="MicrosoftUpdate" /DomainAdminPassword="<password>"  
 ```  
   
 **To report the Microsoft Update status:**  
   
-```  
+```PowerShell  
 C:\pdwinst\media\setup.exe /action="ReportMicrosoftUpdateClientStatus" /DomainAdminPassword="<password>"  
 ```  
   
